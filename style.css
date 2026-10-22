@@ -1,0 +1,678 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #123c70;
+  --blue-dark: #09274b;
+  --gold: #e9b949;
+  --light: #f4f7fb;
+  --white: #ffffff;
+  --text: #263449;
+  --muted: #65748b;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: Arial, "Noto Sans Ethiopic", sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.8;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.header {
+  min-height: 82px;
+  padding: 12px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  background: white;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--blue);
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.logo small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.logo-icon {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: white;
+  background: var(--blue);
+  border-radius: 50%;
+  border: 3px solid var(--gold);
+  font-size: 14px;
+}
+
+.header nav {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+}
+
+.header nav a {
+  color: var(--blue-dark);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.header nav a:hover {
+  color: #bb8511;
+}
+
+.menu-btn {
+  display: none;
+  background: var(--blue);
+  color: white;
+  border: 0;
+  border-radius: 6px;
+  padding: 7px 12px;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.hero {
+  min-height: 540px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 75px 8%;
+  color: white;
+  background:
+    linear-gradient(90deg, rgba(5, 25, 52, 0.96), rgba(9, 39, 75, 0.76)),
+    url("school1.jpg") center / cover no-repeat;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(6, 29, 57, 0.3), transparent);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: #bd8616;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.hero .eyebrow {
+  color: var(--gold);
+}
+
+.hero h1 {
+  font-size: clamp(34px, 6vw, 58px);
+  line-height: 1.45;
+  margin-bottom: 18px;
+}
+
+.hero h1 span {
+  color: var(--gold);
+}
+
+.hero-content > p {
+  max-width: 570px;
+  color: #e2eaf5;
+  margin-bottom: 27px;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--gold);
+  color: #172a42;
+  border: 2px solid var(--gold);
+  padding: 11px 21px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--gold);
+}
+
+.btn-outline {
+  color: white;
+  background: transparent;
+  border-color: white;
+  margin-left: 8px;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: var(--blue);
+}
+
+.hero-label {
+  position: absolute;
+  bottom: 20px;
+  right: 7%;
+  color: #e6edf8;
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+.section {
+  padding: 75px 7%;
+}
+
+.welcome {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.welcome-image img {
+  width: 100%;
+  height: 370px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 12px 12px 0 #e6eef8;
+}
+
+.welcome-text h2,
+.section-heading h2 {
+  font-size: clamp(26px, 4vw, 36px);
+  line-height: 1.5;
+  color: var(--blue-dark);
+  margin-bottom: 14px;
+}
+
+.welcome-text p {
+  color: var(--muted);
+  margin-bottom: 15px;
+}
+
+.welcome-text .btn {
+  margin-top: 10px;
+}
+
+.values {
+  background: var(--light);
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 35px;
+}
+
+.section-heading > p {
+  color: var(--muted);
+}
+
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+.value-card {
+  background: white;
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 10px;
+  border-bottom: 4px solid var(--gold);
+  box-shadow: 0 5px 20px rgba(10, 40, 75, 0.06);
+}
+
+.value-icon {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.value-card h3 {
+  color: var(--blue);
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+
+.value-card p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.program-card {
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  box-shadow: 0 5px 20px rgba(10, 40, 75, 0.07);
+  transition: transform 0.2s;
+}
+
+.program-card:hover {
+  transform: translateY(-5px);
+}
+
+.program-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  background: var(--light);
+}
+
+.program-info {
+  padding: 20px;
+}
+
+.program-info h3 {
+  color: var(--blue);
+  font-size: 19px;
+  margin-bottom: 7px;
+}
+
+.program-info p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.gallery {
+  background: var(--light);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #e0e7f0;
+  transition: transform 0.25s;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
+
+.admission {
+  background: linear-gradient(135deg, #0c2e59, #174a82);
+  color: white;
+}
+
+.admission .section-heading h2 {
+  color: white;
+}
+
+.admission .section-heading > p {
+  color: #e0e8f3;
+}
+
+.admission .eyebrow {
+  color: var(--gold);
+}
+
+.admission-form {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 12px;
+  background: white;
+  color: var(--text);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.admission-form label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 12px 0 5px;
+}
+
+.admission-form input,
+.admission-form select,
+.admission-form textarea {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d6deea;
+  border-radius: 6px;
+  background: #fbfcfe;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.admission-form input:focus,
+.admission-form select:focus,
+.admission-form textarea:focus {
+  outline: 2px solid #c4d8f2;
+  border-color: var(--blue);
+}
+
+.admission-form textarea {
+  resize: vertical;
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 22px;
+  font-family: inherit;
+  font-size: 15px;
+}
+
+.form-note {
+  margin-top: 13px;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.contact-card {
+  padding: 25px 15px;
+  text-align: center;
+  border: 1px solid #e1e7f0;
+  border-radius: 10px;
+  background: white;
+}
+
+.contact-card > span {
+  font-size: 32px;
+}
+
+.contact-card h3 {
+  color: var(--blue);
+  margin: 10px 0 5px;
+}
+
+.contact-card p,
+.contact-card a {
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.contact-card a:hover {
+  color: #bd8616;
+}
+
+.footer {
+  background: #071e3a;
+  color: white;
+  padding: 35px 6%;
+  text-align: center;
+}
+
+.footer-logo {
+  display: inline-flex;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.footer-logo small {
+  color: #cad6e5;
+}
+
+.footer p {
+  font-size: 13px;
+  color: #d1dbea;
+  margin-top: 6px;
+}
+
+@media (max-width: 950px) {
+  .header {
+    padding: 12px 4%;
+  }
+
+  .header nav {
+    gap: 12px;
+  }
+
+  .header nav a {
+    font-size: 12px;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .logo-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .welcome {
+    gap: 28px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .header {
+    padding: 10px 5%;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+  .header nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 18px 25px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .header nav.show {
+    display: flex;
+  }
+
+  .header nav a {
+    padding: 10px 0;
+    font-size: 14px;
+    border-bottom: 1px solid #edf0f5;
+  }
+
+  .hero {
+    min-height: 480px;
+    padding: 60px 6%;
+    background-position: center;
+  }
+
+  .hero h1 {
+    font-size: 35px;
+  }
+
+  .hero-label {
+    font-size: 9px;
+    right: 5%;
+  }
+
+  .section {
+    padding: 55px 5%;
+  }
+
+  .welcome {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .welcome-image img {
+    height: 260px;
+  }
+
+  .value-grid,
+  .program-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .gallery-grid img {
+    height: 145px;
+  }
+
+  .program-card img {
+    height: 220px;
+  }
+
+  .admission-form {
+    padding: 20px 15px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .btn {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 380px) {
+  .logo {
+    font-size: 14px;
+    gap: 7px;
+  }
+
+  .logo-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 12px;
+  }
+
+  .hero h1 {
+    font-size: 29px;
+  }
+
+  .btn-outline {
+    margin: 10px 0 0;
+  }
+}
+.academy-title {
+  color: blue;
+  text-align: center;
+  animation: moveTitle 5s linear infinite alternate;
+}
+
+@keyframes moveTitle {
+  from {
+    transform: translateX(-30px);
+  }
+  to {
+    transform: translateX(30px);
+  }
+}
+.academy-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #0b6b3a;
+  text-align: center;
+  min-height: 50px;
+}
+
+.academy-title::after {
+  content: "|";
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+.site-footer {
+  background: #073b27;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+.site-footer a {
+  color: #d4af37;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
